@@ -9,7 +9,7 @@ public class CameraFollowPlayer : MonoBehaviour
     public Rigidbody2D playerRigidbody;
     public Transform CameraTransform;
     public Transform CameraTarget;
-    public Camera camera;
+    public Camera cam;
 
 
     // Start is called before the first frame update
@@ -17,7 +17,7 @@ public class CameraFollowPlayer : MonoBehaviour
     {
         
         CameraTransform = GetComponent<Transform>();
-        camera = GetComponent<Camera>();
+        cam = GetComponent<Camera>();
 
     }
 
@@ -25,6 +25,6 @@ public class CameraFollowPlayer : MonoBehaviour
     void Update()
     {
         CameraTransform.position = new Vector3(CameraTarget.position.x, CameraTarget.position.y, CameraTransform.position.z);
-        camera.orthographicSize = Mathf.Sqrt(playerRigidbody.velocity.magnitude) + 3;
+        cam.orthographicSize = Mathf.Sqrt(playerRigidbody.velocity.magnitude) + 3;
     }
 }

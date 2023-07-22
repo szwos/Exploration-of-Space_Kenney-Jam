@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D Rigidbody;
 
+    public float pushForce = 10;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,7 @@ public class PlayerController : MonoBehaviour
         //TODO: make Button Accelerate for this in project settings
         if(Input.GetKey(KeyCode.Space))
         {
-            Rigidbody.AddForce(Vector2.right * 5);
+            Rigidbody.AddForce( transform.right * pushForce);
         }
 
     }

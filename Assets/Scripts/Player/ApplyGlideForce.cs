@@ -55,13 +55,6 @@ public class ApplyGlideForce : MonoBehaviour
             Rigidbody.velocity.magnitude *
             Vector2.Dot(gliderVector, frontalLengthUnitVector);
 
-        Debug.Log(dragForceMagnitude);
-
-        if(dragForceMagnitude > 5)
-        {
-            Debug.Log("Zesra³o sie");
-        }
-
         Rigidbody.AddForce(dragUnitVector * dragForceMagnitude);
     }
 
